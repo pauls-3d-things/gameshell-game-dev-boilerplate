@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 var entries = {};
 
-entries.app = ["./src/app/index.ts"]
+entries.app = ["./src/index.ts"]
 
 module.exports = {
     entry: entries,
@@ -50,6 +50,14 @@ module.exports = {
             {
                 from: 'src/package.json',
                 to: './' // inside dist/
+            },
+            {
+                from: 'src/index.css',
+                to: './' // inside dist/
+            },
+            {
+                from: 'src/assets/',
+                to: './assets/' // inside dist/
             }
         ])
     ]
