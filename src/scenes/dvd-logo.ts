@@ -24,8 +24,8 @@ export class DVDLogoScene extends Phaser.Scene {
         this.escKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.ESC);
         
         this.sprite = this.physics.add.sprite(50, 50, "dvd-logo");
-        this.sprite.setVelocityX(10 + Math.random() * 10);
-        this.sprite.setVelocityY(10 + Math.random() * 10);
+        this.sprite.setVelocityX(30 + Math.random() * 10);
+        this.sprite.setVelocityY(30 + Math.random() * 10);
         this.sprite.setCollideWorldBounds(true, 1, 1);
         (this.sprite.body as any).onWorldBounds = true;
 
@@ -43,7 +43,7 @@ export class DVDLogoScene extends Phaser.Scene {
     public update() {
         if (this.escKey?.isDown) {
             this.game.destroy(true);
-            window.location.replace('../../../index.html');
+            nw.App.closeAllWindows();
         }
     }
 }

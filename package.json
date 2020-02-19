@@ -5,10 +5,11 @@
   "main": "src/index.js",
   "author": "Paul Smith <code@uvwxy.de>",
   "scripts": {
-    "clean": "rimraf dist/",
+    "clean": "rimraf dist/ dvd-logo.tar.gz",
     "build": "NODE_ENV=production webpack -p",
     "dev": "webpack -w",
-    "start": "nw dist/"
+    "start": "nwjs dist/",
+    "targz": "cp dvd-logo.sh dist/ && mv dist dvd-logo && tar -czvf dvd-logo.tar.gz ./dvd-logo && mv dvd-logo dist"
   },
   "license": "GPLv3",
   "devDependencies": {
